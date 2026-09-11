@@ -16,7 +16,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-[#050505] text-[#E0E0E0] selection:bg-gold selection:text-black">
         {/* Sticky Luxury Navbar */}
