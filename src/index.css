@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #050505;
+    color: #E2E2E5;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #946B08 0%, #D4A72C 50%, #523803 100%);
+    border-radius: 4px;
+    border: 1px solid #1A1A1A;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F4C95D;
+  }
+}
+
+@layer components {
+  /* Luxury Gold Gradient Text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FFF5D6 0%, #F4C95D 30%, #D4A72C 70%, #FFE6A0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gold-muted {
+    background: linear-gradient(135deg, #E5B842 0%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Luxury Gold Borders & Cards */
+  .gold-border {
+    border: 1px solid rgba(212, 167, 44, 0.3);
+  }
+
+  .gold-border-subtle {
+    border: 1px solid rgba(212, 167, 44, 0.15);
+  }
+
+  .gold-card {
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
+    border: 1px solid rgba(212, 167, 44, 0.2);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(212, 167, 44, 0.1);
+    backdrop-filter: blur(12px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gold-card:hover {
+    border-color: rgba(244, 201, 93, 0.55);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 167, 44, 0.25);
+    transform: translateY(-4px);
+  }
+
+  .gold-card-static {
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
+    border: 1px solid rgba(212, 167, 44, 0.25);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Gold Metallic Button */
+  .btn-gold {
+    background: linear-gradient(135deg, #F4C95D 0%, #D4A72C 50%, #B8860B 100%);
+    color: #050505;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid #FFE6A0;
+    box-shadow: 0 4px 15px rgba(212, 167, 44, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-gold:hover {
+    background: linear-gradient(135deg, #FFE6A0 0%, #F4C95D 50%, #D4A72C 100%);
+    box-shadow: 0 6px 25px rgba(244, 201, 93, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-gold::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(30deg);
+    transition: all 0.75s ease;
+  }
+
+  .btn-gold:hover::after {
+    left: 130%;
+  }
+
+  /* Gold Outline Button */
+  .btn-gold-outline {
+    background: rgba(10, 10, 10, 0.7);
+    color: #F4C95D;
+    font-weight: 600;
+    border: 1px solid rgba(212, 167, 44, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+
+  .btn-gold-outline:hover {
+    background: rgba(212, 167, 44, 0.15);
+    border-color: #F4C95D;
+    color: #FFF;
+    box-shadow: 0 0 20px rgba(212, 167, 44, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Hexagonal Badges Inspired by Visiting Card */
+  .hex-badge {
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  }
+
+  /* ECG Heartbeat SVG Animation */
+  .ecg-line {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawECG 4s linear infinite;
+  }
+
+  @keyframes drawECG {
+    0% {
+      stroke-dashoffset: 600;
+    }
+    45% {
+      stroke-dashoffset: 0;
+    }
+    90% {
+      stroke-dashoffset: -600;
+    }
+    100% {
+      stroke-dashoffset: -600;
+    }
+  }
+
+  /* Shimmer Effect */
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(212, 167, 44, 0) 0%,
+      rgba(244, 201, 93, 0.25) 50%,
+      rgba(212, 167, 44, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(13, 13, 13, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 167, 44, 0.2);
+}

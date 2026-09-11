@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rshealthcareservice.com/sitemap.xml
